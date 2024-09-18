@@ -1,0 +1,8 @@
+.direnv/
+
+**/node_modules/
+**/.env*
+**/.cache
+
+**/build/
+**/outputs

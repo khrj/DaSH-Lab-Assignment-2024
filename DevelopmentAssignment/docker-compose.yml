@@ -1,0 +1,35 @@
+services:
+    server:
+        build:
+            context: .
+            dockerfile: server/Dockerfile
+        restart: always
+        environment:
+            - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+    client1:
+        build:
+            context: .
+            dockerfile: client/Dockerfile
+        restart: on-failure
+        volumes:
+            - ${PWD}/outputs/:/usr/src/app/outputs/
+            - ${PWD}/inputs/input1.txt:/usr/src/app/input.txt
+
+    client2:
+        build:
+            context: .
+            dockerfile: client/Dockerfile
+        restart: on-failure
+        volumes:
+            - ${PWD}/outputs/:/usr/src/app/outputs/
+            - ${PWD}/inputs/input2.txt:/usr/src/app/input.txt
+
+    client3:
+        build:
+            context: .
+            dockerfile: client/Dockerfile
+        restart: on-failure
+        volumes:
+            - ${PWD}/outputs/:/usr/src/app/outputs/
+            - ${PWD}/inputs/input3.txt:/usr/src/app/input.txt
