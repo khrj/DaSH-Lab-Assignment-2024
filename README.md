@@ -19,12 +19,12 @@ DaSH Lab Assignment Submissions
 ### Container Versioning Systems
 
 - ✅ Task 1: Completed in the Development Assignment
-- ✅ Task 2: Development assignments are dockerised, and so is their build process
-- ✅ Task 3: Paper notes and program is available in `ProjectAssignments/ContainerVersioningSystems`
+- ☑️ Task 2: Development assignments are dockerised, and so is their build process
+- ☑️ Task 3: Paper notes are available in `ProjectAssignments/ContainerVersioningSystems`
 
 ### PeerCompute (Serverless)
 
 - ☑️ Task 1: The Golang version of the Development Assignment is written using NATS, which is [MQTT compatible](https://docs.nats.io/running-a-nats-service/configuration/mqtt)
 - ✅ Task 2: Paper review is available in `ProjectAssignments/PeerCompute`
-- ✅ Task 3: Paper review is available in `ProjectAssignments/PeerCompute`
+- ⌛ Task 3
 
