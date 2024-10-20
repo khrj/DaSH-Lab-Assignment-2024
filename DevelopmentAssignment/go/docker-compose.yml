@@ -1,0 +1,44 @@
+services:
+    nats:
+        image: nats:latest
+        network_mode: "host"
+        restart: always
+
+    server:
+        build:
+            context: .
+            dockerfile: server/Dockerfile
+        restart: always
+        environment:
+            - GEMINI_API_KEY=${GEMINI_API_KEY}
+        network_mode: "host"
+
+    client1:
+        build:
+            context: .
+            dockerfile: client/Dockerfile
+        restart: on-failure
+        volumes:
+            - ${PWD}/outputs/:/usr/src/app/outputs/
+            - ${PWD}/inputs/input1.txt:/usr/src/app/input.txt
+        network_mode: "host"
+
+    client2:
+        build:
+            context: .
+            dockerfile: client/Dockerfile
+        restart: on-failure
+        volumes:
+            - ${PWD}/outputs/:/usr/src/app/outputs/
+            - ${PWD}/inputs/input2.txt:/usr/src/app/input.txt
+        network_mode: "host"
+        
+    client3:
+        build:
+            context: .
+            dockerfile: client/Dockerfile
+        restart: on-failure
+        volumes:
+            - ${PWD}/outputs/:/usr/src/app/outputs/
+            - ${PWD}/inputs/input3.txt:/usr/src/app/input.txt
+        network_mode: "host"
